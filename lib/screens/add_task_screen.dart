@@ -37,6 +37,7 @@ class _AddTaskState extends ConsumerState<AddTaskScreen> {
   }
 
 
+
   //-----------------------------------------------------------
 
   @override
@@ -144,7 +145,9 @@ class _AddTaskState extends ConsumerState<AddTaskScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextButton.icon(
-                      onPressed: (){},
+                      onPressed: (){
+                        _formKey.currentState!.reset();
+                      },
                       style:TextButton.styleFrom(
                           backgroundColor: Colors.purple[200]
                       ) ,
