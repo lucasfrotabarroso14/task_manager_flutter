@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:task_hub_flutter/screens/add_task_screen.dart';
+import 'package:task_hub_flutter/screens/dashboard_screen.dart';
 
 import '../widgets/button_status.dart';
 import '../widgets/task_list_view.dart';
@@ -14,6 +15,8 @@ class TaskListScreen extends StatefulWidget {
 }
 
 class _TaskListScreenState extends State<TaskListScreen> {
+
+  int _currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +36,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
         ),
 
         title: Text('Task List'),
+
 
       actions: [
         Container(
@@ -77,6 +81,29 @@ class _TaskListScreenState extends State<TaskListScreen> {
 
 
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: (index){
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+        currentIndex: _currentIndex,
+        items:[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.space_dashboard_outlined),
+            label: 'Dash',
+            //quero que quando clique aqui eu va para o DashboardScreen()
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.task_alt),
+            label: 'Tasks',
+          ),
+          // BottomNavigationBarItem(
+          //   icon: Icon(Icons.school),
+          //   label: 'School',
+          // ),
+        ]
+      ),
 
 
       body: Column(
@@ -87,7 +114,7 @@ class _TaskListScreenState extends State<TaskListScreen> {
             child: ButtonStatusListView()
           ),
           SizedBox(height: 10),
-          Expanded(child: TaskListView()),
+          Expanded(child: _currentIndex == 0 ?   DashboardScreen(): TaskListView()),
 
         ],
       ),

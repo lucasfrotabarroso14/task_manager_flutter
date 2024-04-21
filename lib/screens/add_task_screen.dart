@@ -117,12 +117,16 @@ class _AddTaskState extends ConsumerState<AddTaskScreen> {
                             value: 'Fazendo',
                           ),
                           DropdownMenuItem(
-                            child: Text('Em aguardo'),
-                            value: 'Em aguardo',
+                            child: Text('Revisando'),
+                            value: 'Revisando',
                           ),
                           DropdownMenuItem(
-                            child: Text('Concluido'),
-                            value: 'Concluido',
+                            child: Text('Na Fila'),
+                            value: 'Na Fila',
+                          ),
+                          DropdownMenuItem(
+                            child: Text('Completo'),
+                            value: 'Completo',
                           )
                         ],
                         onChanged: (value){

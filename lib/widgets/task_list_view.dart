@@ -12,8 +12,10 @@ class TaskListView extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context,WidgetRef ref ) {
+    Widget noTask = Center(child: Container(child: Text(
+      'Sem Tasks...',style: TextStyle(fontSize: 18),)));
     final tasks = ref.watch(taskProvider);
-    return  ListView.builder(
+    return  tasks.isEmpty?noTask:ListView.builder(
       itemCount: tasks.length,
         itemBuilder: (context,index) =>
             Padding(
