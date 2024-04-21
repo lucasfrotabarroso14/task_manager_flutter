@@ -19,9 +19,11 @@ class DashboardScreen extends ConsumerWidget {
 
 
     return Scaffold(
+
       appBar: AppBar(
         title:Text('Dashboard')),
-      body: Padding(
+      body:
+      Padding(
         padding: const EdgeInsets.all(10.0),
         child: Column(
 
