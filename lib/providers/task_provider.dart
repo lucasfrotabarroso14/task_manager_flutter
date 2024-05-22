@@ -17,6 +17,11 @@ class TaskNotifier extends StateNotifier<List<Task>>{
     state = [newPlace, ...state];
   }
 
+  deleteProvider(Task task){
+    state = state.where((t) => t.title != task.title).toList();
+
+  }
+
 
 
 }
