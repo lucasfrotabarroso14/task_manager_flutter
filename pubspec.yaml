@@ -38,6 +38,7 @@ dependencies:
   flutter_riverpod: ^2.5.1
   collection: ^1.15.0
   intl: ^0.17.0
+  fl_chart: ^0.68.0
 
 
 dev_dependencies:
