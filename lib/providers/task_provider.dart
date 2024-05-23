@@ -22,6 +22,20 @@ class TaskNotifier extends StateNotifier<List<Task>>{
 
   }
 
+  editTask(Task task,newTitle,newPhase, newLevel){
+
+    state = [
+      for (final t in state)
+        if (t.title == task.title)
+          Task(title: newTitle, level: newLevel, phase: newPhase)
+        else
+        t
+
+    ];
+
+
+  }
+
 
 
 }

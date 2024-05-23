@@ -38,20 +38,23 @@ class _EditDialogState extends ConsumerState<EditDialog> {
                 child: DropdownButtonFormField(
                     items: [
                       DropdownMenuItem(
-                        value:'Dificil',
-                        child: Text('Dificil'),
+                        value:'Fazendo',
+                        child: Text('Fazendo'),
                       ),
                       DropdownMenuItem(
-                        value:'Médio',
-                        child: Text('Médio'),
+                        value:'Revisando',
+                        child: Text('Revisando'),
                       ),
                       DropdownMenuItem(
-                        value:'Fácil',
-                        child: Text('Fácil'),
+                        value:'Na Fila',
+                        child: Text('Na Fila'),
+                      ),  DropdownMenuItem(
+                        value:'Completo',
+                        child: Text('Completo'),
                       ),
                     ],
                     onChanged:(newValue){
-                      selectedLevel = newValue!;
+                      selectedPhase = newValue!;
                     }
                 ),
               ),
@@ -84,7 +87,11 @@ class _EditDialogState extends ConsumerState<EditDialog> {
       ),
       actions: [
         TextButton(
-            onPressed: (){},
+            onPressed: (){
+             ref.read(taskProvider.notifier)
+                 .editTask(widget.task, titleController.text, selectedPhase, selectedLevel);
+             Navigator.of(context).pop();
+            },
             child: Text('Salvar',style: TextStyle(color: Colors.blue),)
         ),
         TextButton(
