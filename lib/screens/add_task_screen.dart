@@ -45,7 +45,7 @@ class _AddTaskState extends ConsumerState<AddTaskScreen> {
     return Scaffold(
 
       appBar: AppBar(
-        title: Text('Adicione a Task')
+        title: Text('Add one task')
         ,),
 
       body: Form(
@@ -62,7 +62,7 @@ class _AddTaskState extends ConsumerState<AddTaskScreen> {
                     child: TextFormField(
                       maxLength: 50,
                       decoration: InputDecoration(
-                        label: Text('Nome'),
+                        label: Text('Name'),
                       ),
                       controller: _taskTitle,
                     ),
@@ -77,21 +77,21 @@ class _AddTaskState extends ConsumerState<AddTaskScreen> {
 
                     child: DropdownButtonFormField(
                       decoration: InputDecoration(
-                        labelText: 'Selecione a dificuldade'
+                        labelText: 'Select difficulty Level'
                       ),
                       value: _selectedLevel,
                         items: [
                           DropdownMenuItem(
                             value:'Dificil',
-                            child: Text('Dificil'),
+                            child: Text('Hard'),
                           ),
                           DropdownMenuItem(
                             value:'Médio',
-                            child: Text('Médio'),
+                            child: Text('Medium'),
                           ),
                           DropdownMenuItem(
                             value:'Fácil',
-                            child: Text('Fácil'),
+                            child: Text('Easy'),
                           ),
                         ],
                         onChanged: (value){

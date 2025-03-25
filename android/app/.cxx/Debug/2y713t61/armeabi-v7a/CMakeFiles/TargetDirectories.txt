@@ -1,0 +1,2 @@
+/Users/lucasfrotabarroso/Desktop/projetos/task_hub_flutter/android/app/.cxx/Debug/2y713t61/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+/Users/lucasfrotabarroso/Desktop/projetos/task_hub_flutter/android/app/.cxx/Debug/2y713t61/armeabi-v7a/CMakeFiles/edit_cache.dir

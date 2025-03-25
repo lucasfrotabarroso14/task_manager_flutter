@@ -1,7 +1,3 @@
-
-
-
-
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,21 +11,19 @@ class TaskChart extends ConsumerWidget {
     final taskStatus = ref.watch(taskStatusProvider);
 
     double getStatusValue(String key) {
-      print('get aqui embaixo:');
+      print('get below:');
       print(taskStatus[key]);
       return taskStatus[key]?.toDouble() ?? 0.0;
-
     }
 
     bool allValuesNull(Map<String, int?> map) {
-
       return map.values.every((value) => value == 0);
-
     }
+
     print(taskStatus);
 
     bool allNull = allValuesNull(taskStatus);
-    print('aqui embaixo:');
+    print('below:');
     print(allNull);
 
     return PieChart(
@@ -37,7 +31,7 @@ class TaskChart extends ConsumerWidget {
         sections: [
           PieChartSectionData(
             value: allNull ? 1.0 : getStatusValue('fazendo'),
-            title: 'Fazendo',
+            title: 'Doing',
             color: Colors.blue.shade200,
             radius: 90,
             showTitle: true,
@@ -46,7 +40,7 @@ class TaskChart extends ConsumerWidget {
           ),
           PieChartSectionData(
             value: allNull ? 1.0 : getStatusValue('Revisando'),
-            title: 'Revisando',
+            title: 'Reviewing',
             color: Colors.purpleAccent.shade100,
             radius: 90,
             showTitle: true,
@@ -55,7 +49,7 @@ class TaskChart extends ConsumerWidget {
           ),
           PieChartSectionData(
             value: allNull ? 1.0 : getStatusValue('Na fila'),
-            title: 'Na Fila',
+            title: 'Queued',
             color: Colors.orangeAccent.shade200,
             radius: 90,
             showTitle: true,
@@ -64,7 +58,7 @@ class TaskChart extends ConsumerWidget {
           ),
           PieChartSectionData(
             value: allNull ? 1.0 : getStatusValue('completo'),
-            title: 'Completo',
+            title: 'Completed',
             color: Colors.green.shade400,
             radius: 90,
             showTitle: true,
